@@ -1,0 +1,11 @@
+{
+  "arrowParens": "avoid",
+  "overrides": [
+    {
+      "files": "*.ts",
+      "options": {
+        "parser": "typescript"
+      }
+    }
+  ]
+}
