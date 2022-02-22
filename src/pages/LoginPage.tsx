@@ -3,10 +3,12 @@ import { useState } from "react";
 import { css, cx } from "@emotion/css";
 import { Button } from "@mui/material";
 import { Form, Formik } from "formik";
+import { useNavigate } from "react-router";
 import * as yup from "yup";
 
+import bffClient from "../clients/bffClient";
 import Input from "../components/Input";
-import useUsername from "../hooks/useUsername";
+import useGame from "../hooks/useGame";
 import { desktop, mobile } from "../styles/breakpoints";
 
 interface FormModel {
@@ -14,7 +16,8 @@ interface FormModel {
 }
 
 const LoginPage = () => {
-  const { username, setUsername } = useUsername();
+  const { setGame, username, setUsername } = useGame();
+  const navigate = useNavigate();
 
   /*
    * This hook fixes a stupid Formik bug where the changing localStorage username will
@@ -23,11 +26,14 @@ const LoginPage = () => {
    * despite the fact that the user will never see the invalid state 🙄 Only happens on
    * existing games for new users
    */
-  const [initialUsername] = useState(username);
+  const [initialUsername] = useState(username ?? "");
 
   // TODO - implement this form flow
-  const onNewGame = ({ username }: FormModel) => {
+  const onNewGame = async ({ username }: FormModel) => {
     setUsername(username);
+    const game = await bffClient.fetchGame();
+    setGame(game);
+    navigate(`/game/${username}/${game.id}`);
   };
   // TODO - implement this form flow
   const onExistingGame = ({ username }: FormModel) => {
