@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { css, cx } from "@emotion/css";
+import { css } from "@emotion/react";
 import { Button } from "@mui/material";
 import { Form, Formik } from "formik";
 import { useNavigate } from "react-router";
@@ -42,7 +42,7 @@ const LoginPage = () => {
 
   return (
     <div
-      className={cx(
+      css={[
         css`
           flex-grow: 1;
           display: flex;
@@ -53,8 +53,8 @@ const LoginPage = () => {
           css`
             margin-left: 10%;
           `
-        )
-      )}
+        ),
+      ]}
     >
       <Formik
         validateOnMount
@@ -67,7 +67,7 @@ const LoginPage = () => {
         {form => (
           <Form>
             <div
-              className={cx(
+              css={[
                 css`
                   display: flex;
                   align-items: center;
@@ -77,12 +77,12 @@ const LoginPage = () => {
                   css`
                     flex-direction: column;
                   `
-                )
-              )}
+                ),
+              ]}
             >
               <Input name="username" label="What's your name?" />
               <div
-                className={css`
+                css={css`
                   display: flex;
                   flex-direction: column;
                   gap: 1em;

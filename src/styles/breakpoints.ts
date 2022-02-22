@@ -1,6 +1,6 @@
-import { css } from "@emotion/css";
+import { css, SerializedStyles } from "@emotion/react";
 
-const breakpoint = (breakpoint: string) => (style: string) =>
+const breakpoint = (breakpoint: string) => (style: SerializedStyles) =>
   css`
     @media only screen and (${breakpoint}) {
       ${style}

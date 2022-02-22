@@ -1,8 +1,8 @@
 const environment = {
-  name: process.env.REACT_APP_ENVIRONMENT_NAME!,
+  name: import.meta.env.VITE_ENVIRONMENT_NAME!,
   bffDomain: {
-    http: process.env.REACT_APP_BFF_DOMAIN_HTTP!,
-    ws: process.env.REACT_APP_BFF_DOMAIN_WS!,
+    http: import.meta.env.VITE_BFF_DOMAIN_HTTP!,
+    ws: import.meta.env.VITE_BFF_DOMAIN_WS!,
   },
 };
 
