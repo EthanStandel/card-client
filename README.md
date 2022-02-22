@@ -3,7 +3,7 @@
 ## Tooling overview
 
 - **Framework**: [React](https://reactjs.org/)
-- **Tooling**: [Create React App](https://create-react-app.dev/)
+- **Build & Tooling**: [Vite](https://vitejs.dev/)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Deployment**: [Digital Ocean App Platform](https://www.digitalocean.com/products/app-platform/)
 - **Styling**: [Emotion](https://emotion.sh/)
