@@ -1,18 +1,18 @@
-import { css } from "@emotion/css";
+import { css } from "@emotion/react";
 import { Outlet } from "react-router";
 
 import theme from "../styles/theme";
 
 const PageContainer = () => (
   <div
-    className={css`
+    css={css`
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     `}
   >
     <header
-      className={css`
+      css={css`
         background: ${theme.palette.primary.main};
         width: 100vw;
         position: sticky;
@@ -22,7 +22,7 @@ const PageContainer = () => (
       Header
     </header>
     <div
-      className={css`
+      css={css`
         min-height: calc(100vh - 75px);
         flex-grow: 1;
         display: flex;
@@ -32,7 +32,7 @@ const PageContainer = () => (
       <Outlet />
     </div>
     <footer
-      className={css`
+      css={css`
         position: sticky;
         background: green;
         bottom: 0;

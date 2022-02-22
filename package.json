@@ -1,22 +1,23 @@
 {
-  "name": "card-client",
+  "name": "letsplaycarddotgames-client",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "build": "tsc && vite build",
+    "lint": "eslint .",
+    "prepare": "husky install",
+    "preview": "vite preview",
+    "start": "vite"
+  },
+  "lint-staged": {
+    "./src/**/*.{ts,tsx}": "npm run lint"
+  },
   "dependencies": {
     "@animxyz/react": "^0.6.4",
-    "@craco/craco": "^6.4.2",
-    "@emotion/css": "^11.5.0",
     "@emotion/react": "^11.7.0",
     "@emotion/styled": "^11.6.0",
     "@mui/material": "^5.2.1",
     "@react-hookz/web": "^12.0.0",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
     "axios": "^0.24.0",
     "formik": "^2.2.9",
     "immer": "^8.0.1",
@@ -24,49 +25,35 @@
     "react-dom": "^17.0.2",
     "react-router": "^6.0.2",
     "react-router-dom": "^6.0.2",
-    "react-scripts": "4.0.3",
     "rxjs": "^7.5.1",
     "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1",
     "yup": "^0.32.11",
     "zustand": "^3.7.0"
-  },
-  "scripts": {
-    "prepare": "husky install",
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "lint": "eslint ."
-  },
-  "lint-staged": {
-    "./src/**/*.{ts,tsx}": "npm run lint"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   },
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@commitlint/format": "^15.0.0",
     "@commitlint/types": "^15.0.0",
+    "@emotion/babel-plugin": "^11.7.2",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
     "@types/axios": "^0.14.0",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",
+    "@vitejs/plugin-react": "^1.2.0",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.2",
-    "prettier": "^2.4.0"
+    "prettier": "^2.4.0",
+    "vite": "^2.8.4"
   }
 }
